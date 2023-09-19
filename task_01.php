@@ -2,9 +2,9 @@
 
 print("================================ Task 1 ================================\n\n");
 
-function loop($start = 0, $end = 20, $step = 2)
+function loop(int $start = 0, int $end = 20, int $step = 2): void
 {
-    print("Even numbers between 1-20 using function:\n");
+    print("Even numbers between 1-20 using for loop inside a function:\n");
 
     for ($i = $start; $i <= $end; $i += $step)
     {
@@ -14,25 +14,27 @@ function loop($start = 0, $end = 20, $step = 2)
     }
 }
 
-loop();
+loop(0, 20, 2);
 
 print("\n\nEven numbers between 1-20 using while loop:\n");
 
-$num = 0;
+$start = 0;
+$end = 20;
+$step = 2;
 
-while ($num <= 20)
+while ($start <= $end)
 {
-    if ($num !== 0 && $num % 2 == 0) printf("%d ", $num);
+    if ($start !== 0 && $start % 2 == 0) printf("%d ", $start);
 
-    $num += 2;
+    $start += $step;
 }
 
 print("\n\nEven numbers between 1-20 using do-while loop:\n");
 
-$num = 0;
+$start = 0;
 
 do {
-    if ($num !== 0 && $num % 2 == 0) printf("%d ", $num);
+    if ($start !== 0 && $start % 2 == 0) printf("%d ", $start);
 
-    $num += 2;
-} while ($num <= 20);
+    $start += $step;
+} while ($start <= $end);
